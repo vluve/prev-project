@@ -29,7 +29,7 @@ public class UserDaoJDBCImpl implements UserDao {
         }
     }
     public void dropUsersTable() {
-        String createTableSQL = "DROP TABLE db_user";
+        String createTableSQL = "DROP TABLE IF EXISTS db_user";
         try (Connection dbConnection = util.connectToDB("example", "postgres", "8786909564");
              Statement statement = dbConnection.createStatement()) {
             statement.execute(createTableSQL);
